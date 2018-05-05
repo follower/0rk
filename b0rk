@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+#
+# b0rk v0.1.0
+#
+# Art & Words & Name by <http://jvns.ca/>
+#
+# Code by <http://rancidbacon.com/>
+#
+# See: <https://twitter.com/starakaj/status/992124188021460992>
+#
+# This is a proof-of-concept which currently only works on MmacOSX.
+#
+# (Proof-of-concept only because I want to check @b0rk is okay with it. :) )
+#
+
+import os
+import sys
+import urllib2
+import hashlib
+import subprocess
+
+# Note: There are SVG files available also.
+
+SUBJECTS = {
+    'pipes': {'url': 'https://drawings.jvns.ca/drawings/pipes.png'},
+    'man': {'url': 'https://drawings.jvns.ca/drawings/man.png'},
+    }
+
+
+CONFIG_DIR_PATH = os.path.realpath(os.path.expanduser("~/.b0rk/"))
+CACHE_SUBDIR_NAME = "cache"
+CACHE_DIR_PATH = os.path.join(CONFIG_DIR_PATH, CACHE_SUBDIR_NAME)
+
+
+def get_cached_file_path(the_subject):
+    """
+    """
+    if not os.path.exists(CONFIG_DIR_PATH):
+        print "Creating configuration/cache directory: %s" % CONFIG_DIR_PATH
+        os.mkdir(CONFIG_DIR_PATH)
+
+    if not os.path.exists(CACHE_DIR_PATH):
+        os.mkdir(CACHE_DIR_PATH)
+
+    the_url = SUBJECTS[the_subject]["url"]
+    cached_img_file_name = "%s.png" % hashlib.sha1(the_url).hexdigest()
+
+    cached_img_file_path = os.path.join(CACHE_DIR_PATH, cached_img_file_name)
+
+    if not os.path.exists(cached_img_file_path):
+        open(cached_img_file_path, "wb").write(urllib2.urlopen(the_url).read())
+
+    return cached_img_file_path
+
+
+
+if __name__ == "__main__":
+    if sys.platform == "darwin":
+
+        if len(sys.argv) == 1:
+            print "You can learn about these subjects: %s" % ", ".join(SUBJECTS.keys())
+            raise SystemExit
+
+        requested_subject = sys.argv[1]
+
+        if SUBJECTS.has_key(requested_subject):
+            image_file_path = get_cached_file_path(requested_subject)
+            subprocess.call(["qlmanage", "-p", image_file_path], stdout=open(os.devnull, 'wb'))
+        else:
+            print "Sorry, that subject is not available."
+            print "You could try `man %s`." % requested_subject
+            raise SystemExit
+
+    else:
+        print "Sorry, your platform is not yet supported."
