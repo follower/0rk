@@ -22,8 +22,8 @@ import subprocess
 # Note: There are SVG files available also.
 
 SUBJECTS = {
-    'pipes': {'url': 'https://drawings.jvns.ca/drawings/pipes.png'},
-    'man': {'url': 'https://drawings.jvns.ca/drawings/man.png'},
+    'pipes': {'img_url': 'https://drawings.jvns.ca/drawings/pipes.png'},
+    'man': {'img_url': 'https://drawings.jvns.ca/drawings/man.png'},
     }
 
 
@@ -42,7 +42,7 @@ def get_cached_file_path(the_subject):
     if not os.path.exists(CACHE_DIR_PATH):
         os.mkdir(CACHE_DIR_PATH)
 
-    the_url = SUBJECTS[the_subject]["url"]
+    the_url = SUBJECTS[the_subject]['img_url']
     cached_img_file_name = "%s.png" % hashlib.sha1(the_url).hexdigest()
 
     cached_img_file_path = os.path.join(CACHE_DIR_PATH, cached_img_file_name)
