@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# kr0b v0.1.1
+# 0rk v0.1.1
 #
 # Art & Words from <http://jvns.ca/>
 #
@@ -27,7 +27,7 @@ SUBJECTS = {
     }
 
 
-CONFIG_DIR_PATH = os.path.realpath(os.path.expanduser("~/.kr0b/"))
+CONFIG_DIR_PATH = os.path.realpath(os.path.expanduser("~/.0rk/"))
 CACHE_SUBDIR_NAME = "cache"
 CACHE_DIR_PATH = os.path.join(CONFIG_DIR_PATH, CACHE_SUBDIR_NAME)
 
