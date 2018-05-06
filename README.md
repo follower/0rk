@@ -41,3 +41,9 @@ For details see: https://github.com/follower/0rk/blob/master/0rk
   
   * <https://github.com/w0lfschild/afloat>
   
+##### Other
+
+ * <https://github.com/asciimoo/drawille/> -- "Pixel graphics in terminal with unicode braille characters"
+ 
+ * <https://github.com/minikomi/ansipix>
+ 
