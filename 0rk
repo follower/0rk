@@ -55,21 +55,20 @@ def get_cached_file_path(the_subject):
 
 
 if __name__ == "__main__":
-    if sys.platform == "darwin":
 
-        if len(sys.argv) == 1:
-            print "You can learn about these subjects: %s" % ", ".join(SUBJECTS.keys())
-            raise SystemExit
+    if len(sys.argv) == 1:
+        print "You can learn about these subjects: %s" % ", ".join(SUBJECTS.keys())
+        raise SystemExit
 
-        requested_subject = sys.argv[1]
+    requested_subject = sys.argv[1]
 
-        if SUBJECTS.has_key(requested_subject):
+    if SUBJECTS.has_key(requested_subject):
+        if sys.platform == "darwin":
             image_file_path = get_cached_file_path(requested_subject)
             subprocess.call(["qlmanage", "-p", image_file_path], stdout=open(os.devnull, 'wb'))
         else:
-            print "Sorry, that subject is not available."
-            print "You could try `man %s`." % requested_subject
-            raise SystemExit
-
+            import webbrowser
+            webbrowser.open(SUBJECTS[requested_subject]['page_url'], new=1)
     else:
-        print "Sorry, your platform is not yet supported."
+        print "Sorry, that subject is not available."
+        print "You could try `man %s`." % requested_subject
