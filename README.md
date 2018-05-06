@@ -17,6 +17,10 @@ For details see: https://github.com/follower/0rk/blob/master/0rk
  * <https://github.com/aki017/homebrew-sixel> -- "unmaintained"
  
  * "[sixcat: Like 'cat' but show images directly in the terminal using SIXEL graphics ](https://gist.github.com/hackerb9/a96cea91e6122d09a6c97f5eb797d5fa)" (mentions `convert foo.jpg sixel:-` from ImageMagick)
+ 
+ * <https://github.com/saitoha/SDL1.2-SIXEL>
+ 
+ * <https://github.com/dsanson/termpdf>
 
 
 ##### Screen Overlay (Mac + Terminal.app)
