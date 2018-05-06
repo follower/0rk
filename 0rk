@@ -1,16 +1,28 @@
 #!/usr/bin/env python
 #
-# 0rk v0.1.2
+# 0rk (v0.1.2) -- Get friendly help where you need it: from the terminal!
 #
-# Art & Words from <http://jvns.ca/>
 #
-# Code by <http://rancidbacon.com/>
+# Art & Words from @b0rk at <http://jvns.ca/>
+#
+# Code by <http://rancidbacon.com/> (License: GPL 3.0)
+#
 #
 # See: <https://twitter.com/starakaj/status/992124188021460992>
 #
-# This is a proof-of-concept which currently only works on MmacOSX.
 #
-# (Proof-of-concept only because I want to check @b0rk is okay with it. :) )
+# This is a proof-of-concept.
+#
+#
+# You can follow & support @b0rk's work here:
+#
+#     * <http://jvns.ca/>
+#     * <https://twitter.com/b0rk>
+#     * <https://gumroad.com/b0rk>
+#
+#
+# Note: This tool is "fan code" (a la "fan art") and is not
+#       written nor endorsed by @b0rk.
 #
 
 import os
