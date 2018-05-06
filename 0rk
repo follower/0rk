@@ -22,8 +22,8 @@ import subprocess
 # Note: There are SVG files available also.
 
 SUBJECTS = {
-    'pipes': {'img_url': 'https://drawings.jvns.ca/drawings/pipes.png'},
-    'man': {'img_url': 'https://drawings.jvns.ca/drawings/man.png'},
+    'pipes': {'img_url': 'https://drawings.jvns.ca/drawings/pipes.png', 'page_url': 'https://drawings.jvns.ca/pipes/'},
+    'man': {'img_url': 'https://drawings.jvns.ca/drawings/man.png',  'page_url': 'https://drawings.jvns.ca/man/'},
     }
 
 
