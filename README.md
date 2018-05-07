@@ -26,6 +26,16 @@ For details see: https://github.com/follower/0rk/blob/master/0rk
  
  * <https://github.com/dsanson/termpdf>
 
+##### iTerm2 image support
+
+ * <https://www.iterm2.com/documentation-images.html>
+ 
+ * <https://www.iterm2.com/utilities/imgcat>
+ 
+ * [`imgcat.py`](https://gist.github.com/garfieldnate/d48f3efd47234dd8ee28d2e674cf8bbe) -- gist port of `imgcat` to Python.
+ 
+ * <https://github.com/asmeurer/iterm2-tools> / <https://pypi.org/project/iterm2-tools/>
+
 
 ##### Screen Overlay (Mac + Terminal.app)
 
@@ -42,8 +52,6 @@ For details see: https://github.com/follower/0rk/blob/master/0rk
   * <https://github.com/w0lfschild/afloat>
   
 ##### Other
-
- * <https://www.iterm2.com/documentation-images.html>
 
  * <https://github.com/asciimoo/drawille/> -- "Pixel graphics in terminal with unicode braille characters"
  
