@@ -65,6 +65,24 @@ def get_cached_file_path(the_subject):
     return cached_img_file_path
 
 
+def show_image_in_iterm(the_image_file_path):
+    """
+    """
+    # TODO: Use library/more robust implementation?
+    #
+    # This implementation based on protocol documented here:
+    #  * <https://www.iterm2.com/documentation-images.html>
+    #  * <https://www.iterm2.com/documentation-escape-codes.html>
+    #
+    # A more robust implementation can be found here:
+    #  * <https://gist.github.com/garfieldnate/d48f3efd47234dd8ee28d2e674cf8bbe>
+    #
+    # A library can be found here:
+    #  * <https://github.com/asmeurer/iterm2-tools>
+    #
+    import base64
+    print "\x1b]1337;File=inline=1:%s\x07" % base64.b64encode(open(the_image_file_path, 'rb').read())
+
 
 if __name__ == "__main__":
 
@@ -79,7 +97,7 @@ if __name__ == "__main__":
         if sys.platform == "darwin":
             image_file_path = get_cached_file_path(requested_subject)
             if os.environ["TERM_PROGRAM"] == "iTerm.app": # TODO: Additional checks? e.g. version
-                subprocess.call(["./imgcat", image_file_path]) # TODO: Handle better...
+                show_image_in_iterm(image_file_path)
             else:
                 subprocess.call(["qlmanage", "-p", image_file_path], stdout=open(os.devnull, 'wb'))
         else:
