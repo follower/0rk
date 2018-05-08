@@ -87,9 +87,12 @@ def show_image_in_iterm(the_image_file_path):
 if __name__ == "__main__":
 
     if len(sys.argv) == 1:
+        print
         print "You can learn about these subjects: %s" % ", ".join(SUBJECTS.keys())
         print "For example, to learn about the `man` command you can type: ./0rk man"
+        print
         print "Follow & support @b0rk's work here: https://twitter.com/b0rk & http://jvns.ca/"
+        print
         raise SystemExit
 
     requested_subject = sys.argv[1]
@@ -98,12 +101,16 @@ if __name__ == "__main__":
         if sys.platform == "darwin":
             image_file_path = get_cached_file_path(requested_subject)
             if os.environ["TERM_PROGRAM"] == "iTerm.app": # TODO: Additional checks? e.g. version
+                print
                 show_image_in_iterm(image_file_path)
+                print
             else:
                 subprocess.call(["qlmanage", "-p", image_file_path], stdout=open(os.devnull, 'wb'))
         else:
             import webbrowser
             webbrowser.open(SUBJECTS[requested_subject]['page_url'], new=1)
     else:
+        print
         print "Sorry, that subject is not available."
         print "You could try `man %s`." % requested_subject
+        print
