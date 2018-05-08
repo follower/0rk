@@ -78,7 +78,10 @@ if __name__ == "__main__":
     if SUBJECTS.has_key(requested_subject):
         if sys.platform == "darwin":
             image_file_path = get_cached_file_path(requested_subject)
-            subprocess.call(["qlmanage", "-p", image_file_path], stdout=open(os.devnull, 'wb'))
+            if os.environ["TERM_PROGRAM"] == "iTerm.app": # TODO: Additional checks? e.g. version
+                subprocess.call(["./imgcat", image_file_path]) # TODO: Handle better...
+            else:
+                subprocess.call(["qlmanage", "-p", image_file_path], stdout=open(os.devnull, 'wb'))
         else:
             import webbrowser
             webbrowser.open(SUBJECTS[requested_subject]['page_url'], new=1)
