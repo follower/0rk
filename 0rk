@@ -89,6 +89,7 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:
         print "You can learn about these subjects: %s" % ", ".join(SUBJECTS.keys())
         print "For example, to learn about the `man` command you can type: ./0rk man"
+        print "Follow & support @b0rk's work here: https://twitter.com/b0rk & http://jvns.ca/"
         raise SystemExit
 
     requested_subject = sys.argv[1]
