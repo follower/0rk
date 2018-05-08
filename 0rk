@@ -36,6 +36,10 @@ import subprocess
 SUBJECTS = {
     'pipes': {'img_url': 'https://drawings.jvns.ca/drawings/pipes.png', 'page_url': 'https://drawings.jvns.ca/pipes/'},
     'man': {'img_url': 'https://drawings.jvns.ca/drawings/man.png',  'page_url': 'https://drawings.jvns.ca/man/'},
+    'proc': {'img_url': 'https://drawings.jvns.ca/drawings/proc.jpeg', 'page_url': 'https://drawings.jvns.ca/proc/'},
+    'signals': {'img_url': 'https://drawings.jvns.ca/drawings/signals.jpeg', 'page_url': 'https://drawings.jvns.ca/signals/'},
+    'permissions': {'img_url': 'https://drawings.jvns.ca/drawings/unixpermissions.png', 'page_url': 'https://drawings.jvns.ca/permissions/'},
+    'bashtips': {'img_url': 'https://drawings.jvns.ca/drawings/bashtips.png',  'page_url': 'https://drawings.jvns.ca/bashtips/'},
     }
 
 
