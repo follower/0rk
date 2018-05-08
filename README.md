@@ -1,6 +1,10 @@
 # 0rk
 
+(A proof-of-concept)
+
 ![](docs/0rk-iterm2-screenshot.png)
+
+Pictured: iTerm2 (`Terminal.app` supported via QuickLook, other terminals currently via web browser)
 
 For details see: https://github.com/follower/0rk/blob/master/0rk
 
