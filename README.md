@@ -1,6 +1,10 @@
 # 0rk
 
+![](docs/0rk-iterm2-screenshot.png)
+
 For details see: https://github.com/follower/0rk/blob/master/0rk
+
+----
 
 ----
 
